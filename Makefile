@@ -1,5 +1,5 @@
 APP=${shell basename $(shell git remote get-url origin)}
-REGISTRY=PavloPryimachov
+REGISTRY=pavlopryimachov
 VERSION=${shell git describe --tags --abbrev=0}-${shell git rev-parse --short HEAD}
 TARGETOS=linux
 TARGETARCH=amd64
@@ -17,7 +17,7 @@ test:
 	go test -v
 
 build:
-	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/PavloPryimachov/kbot/cmd.appVersion=${VERSION}
+	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/pavlopryimachov/kbot/cmd.appVersion=${VERSION}
 
 linux:
 	${shell make build TARGETOS=linux TARGETARCH=${shell dpkg --print-architecture}} 

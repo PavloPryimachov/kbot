@@ -1,4 +1,4 @@
-module github.com/PavloPryimachov/kbot
+module github.com/pavlopryimachov/kbot
 
 go 1.21
 
